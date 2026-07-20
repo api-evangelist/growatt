@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.showdoc.com.cn/262556420217021/0
+docs: https://www.showdoc.com.cn/262556420217021/0
+notes: >-
+  Growatt Open API V1 uses a static API token issued to the account. The token is
+  sent on every request in a `token` HTTP header. Tokens are obtained by an account
+  holder from the Growatt Open API console (openapi.growatt.com). The legacy
+  ShinePhone API instead used username/password (MD5) session login; V1 token auth
+  is the officially supported, recommended mechanism.
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+schemes:
+- name: growattToken
+  type: apiKey
+  in: header
+  parameter_name: token
+  description: Account-scoped Open API V1 token, issued from openapi.growatt.com and
+    sent on every request.
+  sources:
+  - https://www.showdoc.com.cn/262556420217021/0
+legacy:
+- name: shinephoneLogin
+  type: session
+  scheme: username/password (MD5) login, cookie session
+  status: deprecated-in-favor-of-v1-token
