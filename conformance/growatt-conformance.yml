@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: derived
+source: https://www.showdoc.com.cn/262556420217021/0
+notes: >-
+  Cross-cutting standards posture derived from the documented Growatt Open API V1
+  behaviour. No published compliance/certification program (SOC 2, ISO 27001, etc.)
+  was found, so no Compliance pointer is emitted.
+standards:
+- id: rest-json
+  conforms: true
+  evidence: HTTP endpoints returning JSON payloads
+- id: oauth2
+  conforms: false
+  evidence: authentication is a static apiKey token header, not OAuth2
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors returned as application-level JSON fields, not application/problem+json
+- id: rfc8594-deprecation-sunset
+  conforms: false
+- id: pagination
+  conforms: true
+  evidence: list endpoints support page-number pagination

@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.showdoc.com.cn/262556420217021/0
+notes: >-
+  Cross-cutting request/response semantics for the Growatt Open API V1, captured from
+  the published API documentation and the community growattServer client. No public
+  idempotency-key contract is documented, so no Idempotency pointer is emitted.
+authentication:
+  style: apiKey
+  header: token
+  ref: authentication/growatt-authentication.yml
+base_urls:
+  scheme: regional
+  hosts:
+  - region: global
+    url: https://openapi.growatt.com/v1/
+  - region: china
+    url: https://openapi-cn.growatt.com/v1/
+  - region: united-states
+    url: https://openapi-us.growatt.com/v1/
+versioning:
+  scheme: uri-path
+  current: v1
+  ref: lifecycle/growatt-lifecycle.yml
+pagination:
+  style: page-number
+  params:
+  - page
+  notes: Plant and device list endpoints accept a page parameter; responses carry
+    count and per-page collections.
+serialization:
+  request: form-encoded / query parameters
+  response: JSON
+error_envelope:
+  style: JSON body with an application-level result/error_code field (not RFC 9457
+    problem+json); HTTP 200 is commonly returned even for logical errors, with the
+    status conveyed in the body.
+rate_limiting:
+  documented: false
+  notes: No published rate-limit headers or quotas; heavy polling of ShineServer is
+    discouraged in community guidance.
+idempotency:
+  documented: false
+metadata:
+  documented: false
+request_tracing:
+  documented: false

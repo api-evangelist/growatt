@@ -1,0 +1,28 @@
+# Growatt
+
+> Growatt New Energy is a global manufacturer of solar PV inverters, energy storage systems, and smart energy management products. It operates the ShineServer / ShinePhone cloud monitoring platform and publishes a token-authenticated Open API (V1) for reading plant and device telemetry, retrieving historical energy data, and reading or writing inverter parameters for MIN (TLX) string inverters and SPH (MIX) hybrid inverters.
+
+## APIs
+
+- [Growatt Open API V1 docs](https://www.showdoc.com.cn/262556420217021/0): Official token-authenticated REST API for the ShineServer monitoring platform. Base URLs: https://openapi.growatt.com/v1/ (global), https://openapi-cn.growatt.com/v1/ (China), https://openapi-us.growatt.com/v1/ (US).
+
+## Authentication
+
+- Static account token sent in the `token` HTTP header on every request; issued from the Open API console at https://openapi.growatt.com/. See authentication/growatt-authentication.yml.
+
+## Artifacts
+
+- [Authentication](authentication/growatt-authentication.yml): apiKey token-in-header auth profile.
+- [Conventions](conventions/growatt-conventions.yml): regional base URLs, v1 uri-path versioning, page-number pagination, JSON responses.
+- [Lifecycle](lifecycle/growatt-lifecycle.yml): v1 versioning; legacy ShinePhone API superseded by token-based V1.
+- [Conformance](conformance/growatt-conformance.yml): REST/JSON + pagination; not OAuth2/OIDC/RFC 9457.
+- [Packages](packages/growatt-packages.yml): community Python client growattServer (pip install growattServer).
+- [MCP server (candidate)](mcp/growatt-mcp.yml): derived candidate tool list over the V1 methods.
+- [Well-Known](well-known/growatt-well-known.yml): no .well-known documents published (all 404/none).
+- [Domain security](security/growatt-domain-security.yml): probed TLS/DNS posture.
+
+## Company
+
+- [Website](https://growatt.com/)
+- [Open API console / portal](https://openapi.growatt.com/)
+- [ShineServer monitoring](https://server.growatt.com/)

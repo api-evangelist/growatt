@@ -1,8 +1,25 @@
 aid: growatt
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/growatt.png
 name: Growatt
-description: 'Growatt is a company surfaced as a portfolio company of idg-capital and added to the API
-  Evangelist network as a stub for enrichment. Sector: consumer-technology. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Growatt New Energy is a global manufacturer of solar PV inverters, energy storage
+  systems, and smart energy management products for residential, commercial, and utility-scale
+  installations. Growatt operates the ShineServer / ShinePhone cloud monitoring platform and
+  publishes a token-authenticated Open API (V1) that lets third-party systems read plant and
+  device telemetry, retrieve historical energy data, and read or write inverter parameters for
+  MIN (TLX) string inverters and SPH (MIX) hybrid inverters across regional endpoints. Originally
+  surfaced as a portfolio company of IDG Capital; enriched from Growatt''s public developer surface.'
 url: https://raw.githubusercontent.com/api-evangelist/growatt/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +29,41 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer Technology
-apis: []
+- Solar
+- Energy
+- Photovoltaic
+- Inverters
+- Energy Storage
+- IoT
+- Monitoring
+apis:
+- name: Growatt Open API V1
+  description: 'Token-authenticated REST API for the Growatt ShineServer monitoring platform.
+    Exposes plant lists and details, plant energy overview and history, device lists, and
+    per-device energy, detail, history and parameter read/write operations for MIN (TLX)
+    string inverters and SPH (MIX) hybrid inverters. Served from regional base URLs
+    (global, China, US).'
+  humanURL: https://www.showdoc.com.cn/262556420217021/0
+  baseURL: https://openapi.growatt.com/v1/
+  tags:
+  - Solar
+  - Energy
+  - Monitoring
+  properties:
+  - type: Documentation
+    url: https://www.showdoc.com.cn/262556420217021/0
+  - type: Authentication
+    url: authentication/growatt-authentication.yml
+  - type: Conventions
+    url: conventions/growatt-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/growatt-lifecycle.yml
+  - type: MCPServer
+    url: mcp/growatt-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +72,32 @@ maintainers:
 common:
 - type: Website
   url: https://growatt.com/
+- type: Portal
+  url: https://openapi.growatt.com/
+- type: Documentation
+  url: https://www.showdoc.com.cn/262556420217021/0
+- type: APIReference
+  url: https://www.showdoc.com.cn/262556420217021/0
+- type: Packages
+  url: packages/growatt-packages.yml
+- type: WellKnown
+  url: well-known/growatt-well-known.yml
+- type: Authentication
+  url: authentication/growatt-authentication.yml
+- type: Conventions
+  url: conventions/growatt-conventions.yml
+- type: Lifecycle
+  url: lifecycle/growatt-lifecycle.yml
+- type: Conformance
+  url: conformance/growatt-conformance.yml
+- type: MCPServer
+  url: mcp/growatt-mcp.yml
+- type: LLMsTxt
+  url: llms/growatt-llms.txt
+- type: DomainSecurity
+  url: security/growatt-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

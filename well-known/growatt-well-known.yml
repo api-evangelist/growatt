@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/* on Growatt hosts
+notes: >-
+  No .well-known discovery documents are published on any Growatt host. The apex
+  growatt.com marketing host refuses HTTPS (connection reset on 443); the API host
+  openapi.growatt.com and the monitoring host server.growatt.com return 404 for all
+  probed paths; oss.growatt.com 302-redirects every path to its login flow (no real
+  document). Absence is valid, expected data.
+hosts:
+- host: https://openapi.growatt.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://server.growatt.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://growatt.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+    note: HTTPS refused on apex host

@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/growattServer/
+notes: >-
+  Growatt does not publish a first-party client SDK. The most widely used client
+  library is the community-maintained growattServer Python package, which wraps both
+  the legacy password-based ShinePhone API and the official token-based Open API V1.
+packages:
+- language: python
+  registry: pypi
+  name: growattServer
+  version: 2.2.0
+  url: https://pypi.org/project/growattServer/
+  repository: https://github.com/indykoning/PyPi_GrowattServer
+  install: pip install growattServer
+  license: MIT
+  author: IndyKoning
+  official: false
+  wraps: Growatt Open API V1 (token-based) + legacy ShinePhone API

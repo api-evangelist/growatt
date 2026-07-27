@@ -1,0 +1,57 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: https://www.showdoc.com.cn/262556420217021/0
+notes: >-
+  No official or community-hosted MCP server for Growatt was found. This is a
+  CANDIDATE tool list derived from the documented Open API V1 methods (as surfaced
+  by the official docs and the community growattServer client). Write/parameter
+  operations mutate live inverter configuration and should be gated behind explicit
+  human confirmation.
+server:
+  name: growatt
+  transport: http
+  url: null
+tools:
+- name: list_plants
+  description: List plants registered to the account.
+  source_operation: Growatt Open API V1 plant_list
+- name: get_plant_details
+  description: Retrieve details for a plant.
+  source_operation: Growatt Open API V1 plant_details
+- name: get_plant_energy_overview
+  description: Current energy overview for a plant.
+  source_operation: Growatt Open API V1 plant_energy_overview
+- name: get_plant_energy_history
+  description: Historical energy data for a plant over a date range.
+  source_operation: Growatt Open API V1 plant_energy_history
+- name: list_devices
+  description: List devices within a plant.
+  source_operation: Growatt Open API V1 device_list
+- name: get_min_energy
+  description: Current power/energy values for a MIN (TLX) inverter.
+  source_operation: Growatt Open API V1 min_energy
+- name: get_min_detail
+  description: Detailed data for a MIN (TLX) inverter.
+  source_operation: Growatt Open API V1 min_detail
+- name: get_min_energy_history
+  description: Historical energy for a MIN inverter (7-day max range).
+  source_operation: Growatt Open API V1 min_energy_history
+- name: read_min_parameter
+  description: Read a configuration parameter from a MIN inverter.
+  source_operation: Growatt Open API V1 min_read_parameter
+- name: write_min_parameter
+  description: Write a configuration parameter to a MIN inverter (mutating; gate behind confirmation).
+  source_operation: Growatt Open API V1 min_write_parameter
+- name: get_sph_energy
+  description: Current power/energy values for an SPH (MIX) hybrid inverter.
+  source_operation: Growatt Open API V1 sph_energy
+- name: get_sph_detail
+  description: Detailed data for an SPH hybrid inverter.
+  source_operation: Growatt Open API V1 sph_detail
+- name: read_sph_parameter
+  description: Read a configuration parameter from an SPH inverter.
+  source_operation: Growatt Open API V1 sph_read_parameter
+- name: write_sph_parameter
+  description: Write a configuration parameter to an SPH inverter (mutating; gate behind confirmation).
+  source_operation: Growatt Open API V1 sph_write_parameter

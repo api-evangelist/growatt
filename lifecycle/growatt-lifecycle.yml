@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.showdoc.com.cn/262556420217021/0
+notes: >-
+  Growatt publishes a versioned Open API (V1) reached via a uri-path version segment
+  and regional hosts. No public status page, SLA document, or formal deprecation
+  policy (RFC 8594 Sunset/Deprecation headers) was found, so no StatusPage or
+  Deprecation pointer is emitted. A prior password-based ShinePhone API is being
+  superseded by the token-based V1.
+versioning:
+  scheme: uri-path
+  current: v1
+  hosts:
+  - https://openapi.growatt.com/v1/
+  - https://openapi-cn.growatt.com/v1/
+  - https://openapi-us.growatt.com/v1/
+  docs: https://www.showdoc.com.cn/262556420217021/0
+deprecation:
+  policy_url: null
+  sunset_header: false
+  superseded:
+  - api: legacy ShinePhone (username/password) API
+    by: Open API V1 (token-based)
+sla:
+  url: null
+  uptime_target: null
+status_page: null
