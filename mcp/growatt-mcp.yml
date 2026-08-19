@@ -2,12 +2,10 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: https://www.showdoc.com.cn/262556420217021/0
-notes: >-
-  No official or community-hosted MCP server for Growatt was found. This is a
-  CANDIDATE tool list derived from the documented Open API V1 methods (as surfaced
-  by the official docs and the community growattServer client). Write/parameter
-  operations mutate live inverter configuration and should be gated behind explicit
-  human confirmation.
+notes: No official or community-hosted MCP server for Growatt was found. This is a CANDIDATE tool list
+  derived from the documented Open API V1 methods (as surfaced by the official docs and the community
+  growattServer client). Write/parameter operations mutate live inverter configuration and should be gated
+  behind explicit human confirmation.
 server:
   name: growatt
   transport: http
@@ -55,3 +53,9 @@ tools:
 - name: write_sph_parameter
   description: Write a configuration parameter to an SPH inverter (mutating; gate behind confirmation).
   source_operation: Growatt Open API V1 sph_write_parameter
+deployment:
+  mode: none
+  verified: derived
+  tools: 14
+  checked: '2026-08-12'
+  source: catalog MCP census
